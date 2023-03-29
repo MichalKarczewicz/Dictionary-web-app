@@ -1,0 +1,228 @@
+:root {
+  --fontColor: rgba(24, 8, 85, 0.713);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  background: rgb(65, 10, 116);
+  background: radial-gradient(circle, rgb(65, 10, 116) 0%, rgb(2, 6, 16) 0%, rgb(50, 8, 81) 100%, rgb(17, 4, 4) 100%);
+  color: #fff;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  height: 10vh;
+  gap: 20px;
+  padding: 10px;
+  font-size: 2rem;
+}
+nav a {
+  text-decoration: none;
+  color: rgba(8, 2, 32, 0.713);
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgb(2, 4, 10);
+}
+nav .nav-left {
+  margin-left: 10px;
+  font-size: 3rem;
+  letter-spacing: 1rem;
+}
+nav .brightness-toggle {
+  padding: 5px;
+  background-color: rgba(12, 7, 41, 0.713);
+  border: 2px solid black;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100px;
+}
+nav .brightness-toggle i {
+  transition: transform 0.4s ease-in-out;
+  font-size: 1.5rem;
+  color: rgb(239, 236, 236);
+}
+nav .brightness-toggle:hover i {
+  transform: translateX(-30px);
+  opacity: 0.8;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main .container {
+  display: flex;
+  flex-direction: column;
+}
+main .container section {
+  display: block;
+  height: 90vh;
+  background-size: cover;
+  background-position: center center;
+  margin-top: 5vh;
+}
+main .container .home {
+  padding-left: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  overflow: hidden;
+  height: 80vh;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+main .container .home .content-left {
+  margin-left: 5vh;
+}
+main .container .home .content-left h2 {
+  font-size: 4rem;
+  max-width: 400px;
+  text-align: left;
+}
+main .container .home .content-left p {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: rgb(70, 70, 73);
+}
+main .container .home .content-left .btns-home {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 20px;
+  margin-top: 2rem;
+  height: 2rem;
+}
+main .container .home .content-left .btns-home button {
+  height: 60px;
+}
+main .container .home .content-left .btns-home .start {
+  border: none;
+  background-color: rgb(65, 10, 116);
+  color: rgb(239, 236, 236);
+  font-size: 2rem;
+  border-radius: 5px;
+}
+main .container .home .content-left .btns-home .info {
+  border: 3px solid rgb(65, 10, 116);
+  background-color: rgb(4, 3, 5);
+  color: rgb(65, 10, 116);
+  font-size: 2rem;
+  border-radius: 5px;
+}
+main .container .home .content-right {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* dodajemy justify-content */
+}
+main .container .home .content-right img {
+  width: 80%;
+  height: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 35px;
+  opacity: 0.4;
+  box-shadow: -9px -9px 100px 11px rgba(93, 67, 124, 0.4);
+}
+main .container .home.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+main .container .dictionary {
+  display: none;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: opacity 1s ease-in;
+}
+main .container .dictionary .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main .container .dictionary .content .search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 20px;
+}
+main .container .dictionary .content .search-container input[type=text] {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border: 3px solid rgb(65, 10, 116);
+  background-color: rgb(4, 3, 5);
+  color: rgb(65, 10, 116);
+}
+main .container .dictionary .content .search-container .search-button {
+  background-color: transparent;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: -35px;
+  position: absolute;
+  padding-right: 10px;
+  right: 0;
+}
+main .container .dictionary .content .search-container button[type=submit]:hover {
+  color: rgb(65, 10, 116);
+}
+main .container .dictionary .content h2,
+main .container .dictionary .content p,
+main .container .dictionary .content h4,
+main .container .dictionary .content ul {
+  margin-top: 20px;
+}
+main .container .dictionary .content li {
+  font-size: 22px;
+  margin-top: 22px;
+}
+main .container .dictionary .show {
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.text-wrapper {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text {
+  display: inline-block;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes deleting {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

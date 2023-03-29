@@ -13,5 +13,6 @@ Dictionary web app using the Dictionary API
 - View the optimal layout for the interface depending on their device's screen size  
 - <del> See hover and focus states for all interactive elements on the page <del>
 
-[Free Dictionary API] (https://dictionaryapi.dev/)
-[Site](https://michalkarczewicz.github.io/Dictionary-web-app/)
+### Links
+- [Free Dictionary API] (https://dictionaryapi.dev/) 
+- [Site] (https://michalkarczewicz.github.io/Dictionary-web-app/)

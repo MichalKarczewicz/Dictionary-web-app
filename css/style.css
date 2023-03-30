@@ -27,16 +27,20 @@ nav {
   padding: 10px;
   font-size: 2rem;
 }
-nav a {
-  text-decoration: none;
-  color: rgba(8, 2, 32, 0.713);
-  padding-bottom: 5px;
-  border-bottom: 3px solid rgb(2, 4, 10);
-}
 nav .nav-left {
   margin-left: 10px;
   font-size: 3rem;
   letter-spacing: 1rem;
+}
+nav .nav-left a {
+  text-decoration: none;
+  color: rgba(8, 2, 32, 0.713);
+  padding-bottom: 5px;
+  border-bottom: 3px solid rgb(2, 4, 10);
+  transition: color 0.2s ease-in-out;
+}
+nav .nav-left a:hover {
+  color: rgb(65, 10, 116);
 }
 nav .brightness-toggle {
   padding: 5px;
@@ -110,6 +114,11 @@ main .container .home .content-left .btns-home .start {
   color: rgb(239, 236, 236);
   font-size: 2rem;
   border-radius: 5px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+main .container .home .content-left .btns-home .start:hover {
+  opacity: 1;
 }
 main .container .home .content-left .btns-home .info {
   border: 3px solid rgb(65, 10, 116);
@@ -117,11 +126,16 @@ main .container .home .content-left .btns-home .info {
   color: rgb(65, 10, 116);
   font-size: 2rem;
   border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.8;
+}
+main .container .home .content-left .btns-home .info:hover {
+  opacity: 1;
 }
 main .container .home .content-right {
   display: flex;
   align-items: center;
-  justify-content: center; /* dodajemy justify-content */
+  justify-content: center;
 }
 main .container .home .content-right img {
   width: 80%;
@@ -142,8 +156,7 @@ main .container .dictionary {
   display: none;
   height: 80vh;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin-left: 20vh;
   transition: opacity 1s ease-in;
 }
 main .container .dictionary .content {
@@ -155,7 +168,7 @@ main .container .dictionary .content .search-container {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 500px;
+  max-width: 100vh;
   margin: 0 auto;
   position: relative;
   margin-bottom: 20px;
@@ -184,15 +197,38 @@ main .container .dictionary .content .search-container .search-button {
 main .container .dictionary .content .search-container button[type=submit]:hover {
   color: rgb(65, 10, 116);
 }
+main .container .dictionary .content .word-audio {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+main .container .dictionary .content .word-audio button {
+  margin-right: 20vh;
+  width: 100px;
+  height: 50px;
+  border: none;
+  background-color: rgb(65, 10, 116);
+  color: rgb(239, 236, 236);
+  border-radius: 15px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+main .container .dictionary .content .word-audio button:hover {
+  opacity: 1;
+}
 main .container .dictionary .content h2,
 main .container .dictionary .content p,
 main .container .dictionary .content h4,
 main .container .dictionary .content ul {
   margin-top: 20px;
+  list-style: none;
 }
 main .container .dictionary .content li {
   font-size: 22px;
   margin-top: 22px;
+  max-width: 70vh;
+}
+main .container .dictionary .content .definition h3 {
+  color: #fff;
 }
 main .container .dictionary .show {
   display: block;

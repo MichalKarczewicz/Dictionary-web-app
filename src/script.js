@@ -16,22 +16,34 @@ let dictionary = {
 };
 
 const displayWord = data => {
+	const audioBtn = document.querySelector(".audio");
 	const wordInput = document.querySelector(".search-word");
-	console.log("Received data:" + data);
 	const { word, phonetic } = data[0];
 	const { partOfSpeech } = data[0].meanings[0];
 	const { definition } = data[0].meanings[0].definitions[0];
 	const { example } = data[0].meanings[0].definitions[1];
+	let audio;
 	// console.log(typeof example);
+	// console.log(audio);
+	console.log("Received data:" + data);
+
+	if (data[0].phonetics.hasOwnProperty(1)) {
+		audio = data[0].phonetics[1].audio;
+		playAudio = new Audio(audio);
+		audioBtn.innerHTML = `<i class="fa fa-search"></i>`;
+		audioBtn.addEventListener("click", () => playAudio.play());
+	} else {
+		audioBtn.innerHTML = `<i class="fa-solid fa-face-disappointed"></i>`;
+	}
 
 	document.querySelector(".word").innerText = word;
 	document.querySelector(".phonetic-word").innerText = phonetic;
 	document.querySelector(".partOfSpeech").innerText = partOfSpeech;
-	document.querySelector(".definition").innerText = definition;
+	document.querySelector(".definition p").innerText = definition;
 	if (typeof example === "string") {
-		document.querySelector(".example").innerText = example;
+		document.querySelector(".example p").innerText = example;
 	} else {
-		document.querySelector(".example").innerText = "No more info";
+		document.querySelector(".example p").innerText = "No more info";
 	}
 };
 
@@ -68,6 +80,10 @@ startBtn.addEventListener("click", () => {
 const search = () => {
 	dictionary.fetchDictionary(document.querySelector(".search-bar").value);
 };
+
+document.querySelector(".search-bar").addEventListener("click", e => {
+	e.target.value = "";
+});
 
 document.querySelector(".search-bar").addEventListener("keyup", e => {
 	if (e.key == "Enter") {

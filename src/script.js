@@ -28,12 +28,14 @@ const displayWord = data => {
 	console.log("Received data:" + data);
 
 	if (data[0].phonetics.hasOwnProperty(1)) {
+		audioBtn.disabled = false;
 		audio = data[0].phonetics[1].audio;
 		playAudio = new Audio(audio);
 		audioBtn.innerHTML = `<i class="fa fa-search"></i>`;
 		audioBtn.addEventListener("click", () => playAudio.play());
 	} else {
-		audioBtn.innerHTML = `<i class="fa-solid fa-face-disappointed"></i>`;
+		audioBtn.disabled = true;
+		audioBtn.innerHTML = `<i class="fa-solid fa-x"></i>g`;
 	}
 
 	document.querySelector(".word").innerText = word;

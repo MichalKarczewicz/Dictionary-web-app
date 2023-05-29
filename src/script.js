@@ -31,11 +31,11 @@ const displayWord = data => {
 		audioBtn.disabled = false;
 		audio = data[0].phonetics[1].audio;
 		playAudio = new Audio(audio);
-		audioBtn.innerHTML = `<i class="fa fa-search"></i>`;
+		audioBtn.innerHTML = `<i class="fa-solid fa-play"></i>`;
 		audioBtn.addEventListener("click", () => playAudio.play());
 	} else {
 		audioBtn.disabled = true;
-		audioBtn.innerHTML = `<i class="fa-solid fa-x"></i>g`;
+		audioBtn.innerHTML = `<i class="fa-solid fa-x"></i>`;
 	}
 
 	document.querySelector(".word").innerText = word;

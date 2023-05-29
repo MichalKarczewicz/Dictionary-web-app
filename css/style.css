@@ -60,6 +60,12 @@ nav .brightness-toggle:hover i {
   opacity: 0.8;
 }
 
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+  }
+}
 main {
   display: flex;
   flex-direction: column;
@@ -151,6 +157,28 @@ main .container .home .content-right img {
 main .container .home.hide {
   opacity: 0;
   pointer-events: none;
+}
+@media (max-width: 600px) {
+  main .container .home {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+  }
+  main .container .home .content-left h2 {
+    font-size: 3rem;
+    max-width: 300px;
+    text-align: left;
+    margin-top: 2rem;
+  }
+  main .container .home .content-left .btns-home {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin-bottom: 1rem;
+  }
+  main .container .home .content-right {
+    display: none;
+  }
 }
 main .container .dictionary {
   display: none;

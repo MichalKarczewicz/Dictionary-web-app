@@ -70,6 +70,13 @@ nav {
 	}
 }
 
+@media (max-width: 600px) {
+	nav {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
 main {
 	display: flex;
 	flex-direction: column;
@@ -162,6 +169,31 @@ main {
 		.home.hide {
 			opacity: 0;
 			pointer-events: none;
+		}
+
+		@media (max-width: 600px) {
+			.home {
+				display: flex;
+				flex-direction: column;
+				padding-left: 0;
+				.content-left {
+					h2 {
+						font-size: 3rem;
+						max-width: 300px;
+						text-align: left;
+						margin-top: 2rem;
+					}
+					.btns-home {
+						display: flex;
+						flex-direction: column;
+						padding: 10px 20px;
+						margin-bottom: 1rem;
+					}
+				}
+				.content-right {
+					display: none;
+				}
+			}
 		}
 
 		.dictionary {
